@@ -2,127 +2,129 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Blessed LEJ Care Design System - Professional Healthcare Aesthetic */
+/* Modern Professional Design System */
 
 @layer base {
   :root {
-    /* Core brand colors - warm, trustworthy, professional */
-    --background: 39 44% 97%;
-    --foreground: 215 25% 27%;
+    --background: 0 0% 99.2157%;
+    --foreground: 0 0% 0%;
+    --card: 0 0% 99.2157%;
+    --card-foreground: 0 0% 0%;
+    --popover: 0 0% 98.8235%;
+    --popover-foreground: 0 0% 0%;
+    --primary: 241.1111 79.4118% 40%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 214.2857 24.1379% 94.3137%;
+    --secondary-foreground: 0 0% 3.1373%;
+    --muted: 0 0% 96.0784%;
+    --muted-foreground: 0 0% 32.1569%;
+    --accent: 221.3793 100% 94.3137%;
+    --accent-foreground: 216.3158 76% 49.0196%;
+    --destructive: 358.4416 74.7573% 59.6078%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 17.0732% 91.9608%;
+    --input: 0 0% 92.1569%;
+    --ring: 0 0% 0%;
+    --chart-1: 148.0952 53.3898% 53.7255%;
+    --chart-2: 257.9412 100% 60%;
+    --chart-3: 24.8571 98.1308% 58.0392%;
+    --chart-4: 217.0787 76.7241% 54.5098%;
+    --chart-5: 0 0% 45.4902%;
+    --sidebar: 210 42.8571% 97.2549%;
+    --sidebar-foreground: 0 0% 0%;
+    --sidebar-primary: 0 0% 0%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 92.1569%;
+    --sidebar-accent-foreground: 0 0% 0%;
+    --sidebar-border: 0 0% 92.1569%;
+    --sidebar-ring: 0 0% 0%;
+    --font-sans: Plus Jakarta Sans, sans-serif;
+    --font-serif: Lora, serif;
+    --font-mono: IBM Plex Mono, monospace;
+    --radius: 1.4rem;
+    --shadow-2xs: 0px 2px 3px 0px hsl(0 0% 0% / 0.08);
+    --shadow-xs: 0px 2px 3px 0px hsl(0 0% 0% / 0.08);
+    --shadow-sm: 0px 2px 3px 0px hsl(0 0% 0% / 0.16), 0px 1px 2px -1px hsl(0 0% 0% / 0.16);
+    --shadow: 0px 2px 3px 0px hsl(0 0% 0% / 0.16), 0px 1px 2px -1px hsl(0 0% 0% / 0.16);
+    --shadow-md: 0px 2px 3px 0px hsl(0 0% 0% / 0.16), 0px 2px 4px -1px hsl(0 0% 0% / 0.16);
+    --shadow-lg: 0px 2px 3px 0px hsl(0 0% 0% / 0.16), 0px 4px 6px -1px hsl(0 0% 0% / 0.16);
+    --shadow-xl: 0px 2px 3px 0px hsl(0 0% 0% / 0.16), 0px 8px 10px -1px hsl(0 0% 0% / 0.16);
+    --shadow-2xl: 0px 2px 3px 0px hsl(0 0% 0% / 0.40);
+    --tracking-normal: -0.025em;
+    --spacing: 0.27rem;
 
-    /* Card backgrounds with subtle warmth */
-    --card: 0 0% 100%;
-    --card-foreground: 215 25% 27%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 27%;
-
-    /* Primary - Navy blue for trust and professionalism */
-    --primary: 215 84% 20%;
-    --primary-foreground: 0 0% 98%;
-    --primary-light: 215 84% 35%;
-    --primary-lighter: 215 54% 85%;
-
-    /* Secondary - Warm cream/beige tones */
-    --secondary: 39 44% 92%;
-    --secondary-foreground: 215 25% 27%;
-    --secondary-dark: 35 25% 75%;
-
-    /* Muted tones for subtle elements */
-    --muted: 39 20% 92%;
-    --muted-foreground: 215 15% 55%;
-
-    /* Accent - Soft blue for highlights */
-    --accent: 200 35% 85%;
-    --accent-foreground: 215 25% 27%;
-
-    /* Care-themed colors */
+    /* Care-themed colors for backwards compatibility */
     --care-warm: 25 85% 85%;
     --care-trust: 205 70% 90%;
-    --care-professional: 215 84% 20%;
+    --care-professional: 241.1111 79.4118% 40%;
 
     /* Functional colors */
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
     --success: 120 40% 50%;
     --success-foreground: 0 0% 98%;
     --warning: 45 85% 55%;
     --warning-foreground: 0 0% 98%;
 
-    --border: 39 20% 85%;
-    --input: 39 20% 92%;
-    --ring: 215 84% 20%;
-
-    --radius: 0.75rem;
-
-    /* Professional gradients for healthcare */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
+    /* Professional gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent-foreground)));
     --gradient-warm: linear-gradient(135deg, hsl(var(--care-warm)), hsl(var(--secondary)));
     --gradient-trust: linear-gradient(135deg, hsl(var(--care-trust)), hsl(var(--accent)));
     --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--secondary)));
 
-    /* Elegant shadows with brand colors */
+    /* Elegant shadows */
     --shadow-care: 0 10px 40px -10px hsl(var(--primary) / 0.15);
     --shadow-warm: 0 8px 30px -8px hsl(var(--care-warm) / 0.25);
     --shadow-professional: 0 12px 45px -12px hsl(var(--primary) / 0.2);
 
-    /* Smooth transitions for professional feel */
+    /* Smooth transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --background: 225 7.1429% 10.9804%;
+    --foreground: 0 0% 94.1176%;
+    --card: 228.0000 6.8493% 14.3137%;
+    --card-foreground: 0 0% 94.1176%;
+    --popover: 228.0000 6.8493% 14.3137%;
+    --popover-foreground: 0 0% 94.1176%;
+    --primary: 257.6687 100% 68.0392%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 226.6667 9.6774% 18.2353%;
+    --secondary-foreground: 0 0% 94.1176%;
+    --muted: 226.6667 9.6774% 18.2353%;
+    --muted-foreground: 0 0% 62.7451%;
+    --accent: 217.2414 32.5843% 17.4510%;
+    --accent-foreground: 208.2090 100.0000% 73.7255%;
+    --destructive: 0 90.6040% 70.7843%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 222.8571 6.4220% 21.3725%;
+    --input: 222.8571 6.4220% 21.3725%;
+    --ring: 257.6687 100% 68.0392%;
+    --chart-1: 141.8919 69.1589% 58.0392%;
+    --chart-2: 257.6687 100% 68.0392%;
+    --chart-3: 0 93.5484% 81.7647%;
+    --chart-4: 217.5484 87.5706% 65.2941%;
+    --chart-5: 0 0% 62.7451%;
+    --sidebar: 240 4.3478% 9.0196%;
+    --sidebar-foreground: 0 0% 94.1176%;
+    --sidebar-primary: 257.6687 100% 68.0392%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 226.6667 9.6774% 18.2353%;
+    --sidebar-accent-foreground: 257.6687 100% 68.0392%;
+    --sidebar-border: 222.8571 6.4220% 21.3725%;
+    --sidebar-ring: 257.6687 100% 68.0392%;
+    --font-sans: Plus Jakarta Sans, sans-serif;
+    --font-serif: Lora, serif;
+    --font-mono: IBM Plex Mono, monospace;
+    --radius: 1.4rem;
+    --shadow-2xs: 0px 2px 3px 0px hsl(0 0% 0% / 0.08);
+    --shadow-xs: 0px 2px 3px 0px hsl(0 0% 0% / 0.08);
+    --shadow-sm: 0px 2px 3px 0px hsl(0 0% 0% / 0.16), 0px 1px 2px -1px hsl(0 0% 0% / 0.16);
+    --shadow: 0px 2px 3px 0px hsl(0 0% 0% / 0.16), 0px 1px 2px -1px hsl(0 0% 0% / 0.16);
+    --shadow-md: 0px 2px 3px 0px hsl(0 0% 0% / 0.16), 0px 2px 4px -1px hsl(0 0% 0% / 0.16);
+    --shadow-lg: 0px 2px 3px 0px hsl(0 0% 0% / 0.16), 0px 4px 6px -1px hsl(0 0% 0% / 0.16);
+    --shadow-xl: 0px 2px 3px 0px hsl(0 0% 0% / 0.16), 0px 8px 10px -1px hsl(0 0% 0% / 0.16);
+    --shadow-2xl: 0px 2px 3px 0px hsl(0 0% 0% / 0.40);
   }
 }
 
@@ -133,6 +135,7 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
+    letter-spacing: var(--tracking-normal);
   }
 }
 
@@ -179,10 +182,10 @@
   }
   
   .care-button-primary {
-    @apply bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-4 rounded-xl care-transition shadow-lg hover:shadow-xl;
+    @apply bg-primary hover:opacity-90 text-primary-foreground font-semibold px-8 py-4 rounded-xl care-transition shadow-lg hover:shadow-xl;
   }
   
   .care-button-secondary {
-    @apply bg-secondary hover:bg-secondary-dark text-secondary-foreground font-semibold px-8 py-4 rounded-xl care-transition border border-border;
+    @apply bg-secondary hover:opacity-90 text-secondary-foreground font-semibold px-8 py-4 rounded-xl care-transition border border-border;
   }
 }
