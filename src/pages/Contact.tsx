@@ -103,7 +103,7 @@ const Contact = () => {
                         <div className="space-y-1">
                           <a
                             href="tel:+61414326448"
-                            className="block text-lg font-semibold text-primary hover:text-primary-light care-transition"
+                            className="block text-lg font-semibold text-primary hover:text-primary/80 care-transition"
                           >
                             0414 326 448
                           </a>
@@ -125,7 +125,7 @@ const Contact = () => {
                         <div className="space-y-1">
                           <a
                             href="mailto:info@blessedlejcare.com.au"
-                            className="block text-lg font-semibold text-primary hover:text-primary-light care-transition"
+                            className="block text-lg font-semibold text-primary hover:text-primary/80 care-transition"
                           >
                             info@blessedlejcare.com.au
                           </a>

@@ -98,9 +98,9 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-primary-light/20 py-6 flex flex-col lg:flex-row items-center justify-between space-y-4 lg:space-y-0">
+        <div className="border-t border-primary/20 py-6 flex flex-col lg:flex-row items-center justify-between space-y-4 lg:space-y-0">
           <div className="text-sm text-primary-foreground/70">
-            © {new Date().getFullYear()} Blessed LEJ Care. All rights reserved. ABN: 12345678901
+            &copy; {new Date().getFullYear()} Blessed LEJ Care. All rights reserved. ABN: 12345678901
           </div>
           <div className="flex space-x-6 text-sm">
             <Link 

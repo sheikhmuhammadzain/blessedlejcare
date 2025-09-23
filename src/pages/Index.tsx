@@ -25,15 +25,15 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <div className="space-y-6">
-                <h1 className="care-heading">
+                <h1 className="care-heading motion-safe:animate-in motion-safe:slide-in-from-left-8 motion-safe:fade-in-0 duration-[1200ms] ease-out">
                   Compassionate care that honours dignity and independence
                 </h1>
-                <p className="care-subheading">
+                <p className="care-subheading motion-safe:animate-in motion-safe:slide-in-from-left-8 motion-safe:fade-in-0 duration-[1200ms] ease-out" style={{ animationDelay: "250ms" }}>
                   Trusted aged care and NDIS disability support in Brighton Le Sands — respectful, reliable and tailored to your needs.
                 </p>
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-bottom-4 duration-[1200ms] ease-out" style={{ animationDelay: "400ms" }}>
                 <Button asChild size="lg" className="care-button-primary">
                   <Link to="/contact">
                     Contact Clarice <ArrowRight className="ml-2 w-5 h-5" />
@@ -47,7 +47,8 @@ const Index = () => {
               <div className="flex items-center space-x-6 pt-4">
                 <a 
                   href="tel:+61414326448" 
-                  className="flex items-center space-x-2 text-primary hover:text-primary-light care-transition"
+                  className="flex items-center space-x-2 text-primary hover:text-primary/80 care-transition motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-bottom-4 duration-[1200ms] ease-out"
+                  style={{ animationDelay: "600ms" }}
                 >
                   <Phone className="w-5 h-5" />
                   <div>
@@ -58,13 +59,13 @@ const Index = () => {
               </div>
             </div>
             
-            <div className="relative">
+            <div className="relative motion-safe:animate-in motion-safe:fade-in-0 motion-safe:zoom-in-95 duration-[1200ms] ease-out" style={{ animationDelay: "300ms" }}>
               <img 
                 src={heroImage} 
                 alt="Compassionate caregiver supporting older woman at home"
-                className="rounded-3xl shadow-2xl w-full"
+                className="rounded-3xl shadow-2xl w-full motion-safe:animate-float-slow"
               />
-              <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-xl">
+              <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-xl motion-safe:animate-in motion-safe:slide-in-from-bottom-6 motion-safe:fade-in-0 duration-[1200ms] ease-out" style={{ animationDelay: "700ms" }}>
                 <div className="flex items-center space-x-3">
                   <div className="w-12 h-12 bg-success/10 rounded-full flex items-center justify-center">
                     <CheckCircle className="w-6 h-6 text-success" />
@@ -83,7 +84,7 @@ const Index = () => {
       {/* Services Overview */}
       <section className="care-section">
         <div className="care-container">
-          <div className="text-center space-y-4 mb-16">
+          <div className="text-center space-y-4 mb-16 motion-safe:animate-in motion-safe:fade-in-0 duration-[1100ms] ease-out">
             <h2 className="care-heading text-center">Our Services</h2>
             <p className="care-subheading text-center max-w-3xl mx-auto">
               Comprehensive care services designed to help you maintain independence and quality of life in your own home
@@ -91,8 +92,8 @@ const Index = () => {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {featuredServices.map((service) => (
-              <Card key={service.id} className="care-card hover:shadow-xl group">
+            {featuredServices.map((service, i) => (
+              <Card key={service.id} className="care-card hover:shadow-xl group motion-safe:animate-in motion-safe:fade-in-0 motion-safe:zoom-in-95 duration-[1000ms] ease-out" style={{ animationDelay: `${i * 150}ms` }}>
                 <CardContent className="p-6 text-center space-y-4">
                   <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto group-hover:bg-primary group-hover:text-primary-foreground care-transition">
                     <Heart className="w-8 h-8" />
@@ -122,7 +123,7 @@ const Index = () => {
       {/* Why Choose Us */}
       <section className="care-section bg-secondary/50">
         <div className="care-container">
-          <div className="text-center space-y-4 mb-16">
+          <div className="text-center space-y-4 mb-16 motion-safe:animate-in motion-safe:fade-in-0 duration-[1100ms] ease-out">
             <h2 className="care-heading">Why Choose Blessed LEJ Care?</h2>
             <p className="care-subheading max-w-3xl mx-auto">
               We're committed to providing compassionate, professional care that respects your dignity and supports your independence
@@ -130,7 +131,7 @@ const Index = () => {
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center space-y-4">
+            <div className="text-center space-y-4 motion-safe:animate-in motion-safe:fade-in-0 motion-safe:zoom-in-95 duration-[1100ms] ease-out" style={{ animationDelay: "200ms" }}>
               <div className="w-20 h-20 bg-care-trust rounded-3xl flex items-center justify-center mx-auto">
                 <Shield className="w-10 h-10 text-primary" />
               </div>
@@ -140,7 +141,7 @@ const Index = () => {
               </p>
             </div>
             
-            <div className="text-center space-y-4">
+            <div className="text-center space-y-4 motion-safe:animate-in motion-safe:fade-in-0 motion-safe:zoom-in-95 duration-[1000ms] ease-out" style={{ animationDelay: "300ms" }}>
               <div className="w-20 h-20 bg-care-warm rounded-3xl flex items-center justify-center mx-auto">
                 <Heart className="w-10 h-10 text-primary" />
               </div>
@@ -150,7 +151,7 @@ const Index = () => {
               </p>
             </div>
             
-            <div className="text-center space-y-4">
+            <div className="text-center space-y-4 motion-safe:animate-in motion-safe:fade-in-0 motion-safe:zoom-in-95 duration-[1200ms] ease-out" style={{ animationDelay: "700ms" }}>
               <div className="w-20 h-20 bg-care-trust rounded-3xl flex items-center justify-center mx-auto">
                 <Clock className="w-10 h-10 text-primary" />
               </div>
@@ -167,7 +168,7 @@ const Index = () => {
       <section className="care-section">
         <div className="care-container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
+            <div className="space-y-6 motion-safe:animate-in motion-safe:slide-in-from-left-8 motion-safe:fade-in-0 duration-[1100ms] ease-out" style={{ animationDelay: "200ms" }}>
               <h2 className="care-heading">Meet Clarice</h2>
               <div className="space-y-4">
                 <p className="care-text">
@@ -181,7 +182,7 @@ const Index = () => {
                 <Link to="/about">Learn More About Our Team</Link>
               </Button>
             </div>
-            <div className="bg-gradient-to-br from-care-warm to-care-trust rounded-3xl p-8 lg:p-12 text-center space-y-6">
+            <div className="bg-gradient-to-br from-care-warm to-care-trust rounded-3xl p-8 lg:p-12 text-center space-y-6 motion-safe:animate-in motion-safe:slide-in-from-right-8 motion-safe:fade-in-0 duration-[1100ms] ease-out" style={{ animationDelay: "350ms" }}>
               <div className="space-y-4">
                 <h3 className="text-2xl font-semibold text-foreground">Ready to Get Started?</h3>
                 <p className="care-text">
@@ -199,7 +200,7 @@ const Index = () => {
       {/* Testimonials Preview */}
       <section className="care-section bg-secondary/30">
         <div className="care-container">
-          <div className="text-center space-y-4 mb-16">
+          <div className="text-center space-y-4 mb-16 motion-safe:animate-in motion-safe:fade-in-0 duration-[1100ms] ease-out">
             <h2 className="care-heading">What Our Clients Say</h2>
             <p className="care-subheading max-w-3xl mx-auto">
               Real stories from families who trust us with their care needs
@@ -207,8 +208,8 @@ const Index = () => {
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            {featuredTestimonials.map((testimonial) => (
-              <Card key={testimonial.id} className="care-card">
+            {featuredTestimonials.map((testimonial, i) => (
+              <Card key={testimonial.id} className="care-card motion-safe:animate-in motion-safe:fade-in-0 motion-safe:zoom-in-95 duration-[1000ms] ease-out" style={{ animationDelay: `${i * 150}ms` }}>
                 <CardContent className="p-8 space-y-6">
                   <div className="flex space-x-1">
                     {[...Array(5)].map((_, i) => (
@@ -238,13 +239,13 @@ const Index = () => {
       {/* Contact CTA */}
       <section className="care-section bg-primary text-primary-foreground">
         <div className="care-container text-center space-y-8">
-          <h2 className="text-3xl lg:text-4xl font-bold">
+          <h2 className="text-3xl lg:text-4xl font-bold motion-safe:animate-in motion-safe:fade-in-0 duration-[1100ms] ease-out" style={{ animationDelay: "150ms" }}>
             Ready for Compassionate Care?
           </h2>
-          <p className="text-xl lg:text-2xl text-primary-foreground/80 max-w-3xl mx-auto">
+          <p className="text-xl lg:text-2xl text-primary-foreground/80 max-w-3xl mx-auto motion-safe:animate-in motion-safe:fade-in-0 duration-[1100ms] ease-out" style={{ animationDelay: "300ms" }}>
             Contact Clarice today to discuss your care needs and learn how we can help you or your loved one maintain independence at home.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-bottom-4 duration-[1200ms] ease-out" style={{ animationDelay: "450ms" }}>
             <a
               href="tel:+61414326448"
               className="inline-flex items-center justify-center px-8 py-4 bg-white text-primary font-semibold rounded-xl hover:bg-white/90 care-transition shadow-lg"
@@ -252,7 +253,7 @@ const Index = () => {
               <Phone className="mr-2 w-5 h-5" />
               Call 0414 326 448
             </a>
-            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary">
+            <Button asChild size="lg" variant="outline" className="border-white text-primary  hover:bg-primary hover:text-white">
               <Link to="/contact">Send a Message</Link>
             </Button>
           </div>

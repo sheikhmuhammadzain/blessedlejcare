@@ -23,8 +23,8 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <Heart className="w-6 h-6 text-primary-foreground" />
+            <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
+              <img src="/logo.jpg" alt="Logo" />
             </div>
             <div className="text-xl lg:text-2xl font-bold text-primary">
               Blessed LEJ Care
@@ -52,7 +52,7 @@ const Header = () => {
           <div className="hidden md:flex items-center space-x-4">
             <a
               href="tel:+61414326448"
-              className="flex items-center space-x-2 text-primary hover:text-primary-light care-transition"
+              className="flex items-center space-x-2 text-primary hover:text-primary/80 care-transition"
             >
               <Phone className="w-4 h-4" />
               <span className="font-semibold">0414 326 448</span>
