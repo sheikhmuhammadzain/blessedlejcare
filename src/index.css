@@ -2,41 +2,73 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Blessed LEJ Care Design System - Professional Healthcare Aesthetic */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core brand colors - warm, trustworthy, professional */
+    --background: 39 44% 97%;
+    --foreground: 215 25% 27%;
 
+    /* Card backgrounds with subtle warmth */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 215 25% 27%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 215 25% 27%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Navy blue for trust and professionalism */
+    --primary: 215 84% 20%;
+    --primary-foreground: 0 0% 98%;
+    --primary-light: 215 84% 35%;
+    --primary-lighter: 215 54% 85%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Warm cream/beige tones */
+    --secondary: 39 44% 92%;
+    --secondary-foreground: 215 25% 27%;
+    --secondary-dark: 35 25% 75%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted tones for subtle elements */
+    --muted: 39 20% 92%;
+    --muted-foreground: 215 15% 55%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - Soft blue for highlights */
+    --accent: 200 35% 85%;
+    --accent-foreground: 215 25% 27%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Care-themed colors */
+    --care-warm: 25 85% 85%;
+    --care-trust: 205 70% 90%;
+    --care-professional: 215 84% 20%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Functional colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --success: 120 40% 50%;
+    --success-foreground: 0 0% 98%;
+    --warning: 45 85% 55%;
+    --warning-foreground: 0 0% 98%;
 
-    --radius: 0.5rem;
+    --border: 39 20% 85%;
+    --input: 39 20% 92%;
+    --ring: 215 84% 20%;
+
+    --radius: 0.75rem;
+
+    /* Professional gradients for healthcare */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
+    --gradient-warm: linear-gradient(135deg, hsl(var(--care-warm)), hsl(var(--secondary)));
+    --gradient-trust: linear-gradient(135deg, hsl(var(--care-trust)), hsl(var(--accent)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--secondary)));
+
+    /* Elegant shadows with brand colors */
+    --shadow-care: 0 10px 40px -10px hsl(var(--primary) / 0.15);
+    --shadow-warm: 0 8px 30px -8px hsl(var(--care-warm) / 0.25);
+    --shadow-professional: 0 12px 45px -12px hsl(var(--primary) / 0.2);
+
+    /* Smooth transitions for professional feel */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +132,57 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@layer components {
+  /* Care-focused component styles */
+  .care-section {
+    @apply py-16 lg:py-24;
+  }
+  
+  .care-container {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .care-gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .care-gradient-warm {
+    background: var(--gradient-warm);
+  }
+  
+  .care-shadow {
+    box-shadow: var(--shadow-care);
+  }
+  
+  .care-transition {
+    transition: var(--transition-smooth);
+  }
+  
+  .care-card {
+    @apply bg-card rounded-2xl p-6 lg:p-8 care-shadow care-transition hover:shadow-lg;
+  }
+  
+  .care-heading {
+    @apply text-3xl lg:text-4xl xl:text-5xl font-bold text-primary leading-tight;
+  }
+  
+  .care-subheading {
+    @apply text-xl lg:text-2xl text-muted-foreground font-medium leading-relaxed;
+  }
+  
+  .care-text {
+    @apply text-base lg:text-lg text-foreground leading-relaxed;
+  }
+  
+  .care-button-primary {
+    @apply bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-4 rounded-xl care-transition shadow-lg hover:shadow-xl;
+  }
+  
+  .care-button-secondary {
+    @apply bg-secondary hover:bg-secondary-dark text-secondary-foreground font-semibold px-8 py-4 rounded-xl care-transition border border-border;
   }
 }
