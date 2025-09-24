@@ -58,7 +58,7 @@ const Header = () => {
               <Phone className="w-4 h-4" />
               <span className="font-semibold">0414 326 448</span>
             </a>
-            <Button asChild className="care-button-primary">
+            <Button asChild className="care-button-primary hover:bg-primary/80 hover:text-primary">
               <Link to="/contact">Get Support</Link>
             </Button>
           </div>
