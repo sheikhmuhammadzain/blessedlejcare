@@ -190,6 +190,67 @@
   }
 }
 
+@layer components {
+  /* Marquee component */
+  .marquee {
+    @apply relative w-full overflow-hidden;
+  }
+
+  .marquee-track {
+    display: inline-flex;
+    align-items: center;
+    gap: 2rem; /* space between items */
+    white-space: nowrap;
+    animation: marquee-scroll var(--marquee-duration, 30000ms) linear infinite;
+    will-change: transform;
+  }
+
+  /* Pause animation on hover */
+  .marquee:hover .marquee-track {
+    animation-play-state: paused;
+  }
+
+  /* Optional gradient fade on edges */
+  .marquee.marquee-fade::before,
+  .marquee.marquee-fade::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 56px;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .marquee.marquee-fade::before {
+    left: 0;
+    background: linear-gradient(to right, hsl(var(--background)) 0%, transparent 100%);
+  }
+
+  .marquee.marquee-fade::after {
+    right: 0;
+    background: linear-gradient(to left, hsl(var(--background)) 0%, transparent 100%);
+  }
+}
+
+@layer utilities {
+  @keyframes marquee-scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Accessibility: Respect user's motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+      animation: none !important;
+    }
+  }
+}
+
 @layer utilities {
   /* Smooth scrolling for the entire page */
   html {
