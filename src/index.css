@@ -252,6 +252,17 @@
 }
 
 @layer utilities {
+  /* Hide scrollbars (cross-browser) */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+@layer utilities {
   /* Smooth scrolling for the entire page */
   html {
     scroll-behavior: smooth;
