@@ -1,8 +1,10 @@
 // Auto-discovery for gallery images using Vite's import.meta.glob
 // Place images in: src/assets/gallery/**/*.{jpg,jpeg,png,webp,avif}
-// Falls back to /public/gallery list (src/data/gallery.ts) if none found
+// Also auto-imports all images from /public/gallery via an auto-generated manifest.
+// Falls back to /public/gallery manual list (src/data/gallery.ts) if none found
 
 import { galleryImages as fallbackPublicList } from "@/data/gallery";
+import { galleryPublicManifest } from "@/data/gallery.manifest";
 
 export type GalleryItem = { src: string; alt: string };
 
@@ -29,7 +31,13 @@ const autoDiscovered: GalleryItem[] = Object.entries(modules)
   .sort((a, b) => (a.src > b.src ? 1 : -1));
 
 export function getGalleryImages(): GalleryItem[] {
+  // 1) Prefer auto-generated manifest from /public/gallery
+  if (Array.isArray(galleryPublicManifest) && galleryPublicManifest.length > 0) {
+    return galleryPublicManifest as GalleryItem[];
+  }
+  // 2) Then, use auto-discovered assets from src/assets/gallery
   if (autoDiscovered.length > 0) return autoDiscovered;
+  // 3) Finally, fall back to a static list
   return fallbackPublicList;
 }
 
