@@ -73,7 +73,8 @@ As an NDIS-approved provider, we work with participants to deliver support that 
       "Capacity building focus",
       "Flexible support arrangements",
       "Goal-oriented service delivery",
-      "Community participation support"
+      "Community participation support",
+      "Experience supporting clients with mental health conditions, spinal injuries, and acquired brain injuries"
     ],
     whatsIncluded: [
       "Personal care and daily living skills",
@@ -216,6 +217,80 @@ During respite care, we provide the same level of care and attention that famili
       {
         question: "Can you provide overnight respite care?",
         answer: "Yes, we offer overnight respite care for situations where family carers need extended time away or assistance during night hours."
+      }
+    ]
+  },
+  {
+    id: "children-youth-support-wwcc",
+    title: "Children & Youth Support (WWCC Certified)",
+    slug: "children-youth-support-wwcc",
+    shortDescription: "Professional, child-safe support for children and young people. WWCC certified with experience supporting kids and families.",
+    longDescription: `Our Children & Youth Support service is provided by WWCC (Working With Children Check) certified staff and focuses on creating a safe, nurturing environment for children and young people, including those with disabilities.
+
+We support daily routines, personal care, skill development and community participation while working closely with families and allied health providers. All care is delivered with safeguarding principles and child-first practices.`,
+    benefits: [
+      "WWCC-certified and child-safe practices",
+      "Experienced supporting children with diverse needs",
+      "Collaborative approach with families and therapists",
+      "Promotes independence and life skills",
+      "Flexible before/after school and weekend support"
+    ],
+    whatsIncluded: [
+      "Before/after school routines and drop-offs/pick-ups",
+      "Personal care and routines for children",
+      "Supported play, learning and social activities",
+      "Community access and participation",
+      "Transport to appointments and activities"
+    ],
+    sessionDuration: "1–8 hours per session (flexible, including weekends)",
+    pricingNotes: "NDIS funded for eligible participants or private pay",
+    ndisSupported: true,
+    icon: "Users",
+    relatedServices: ["disability-support", "personal-care", "respite-care"],
+    faqs: [
+      {
+        question: "What is WWCC?",
+        answer: "WWCC stands for Working With Children Check. It is a background checking process to ensure suitability for child-related work. Our staff supporting children are WWCC certified."
+      },
+      {
+        question: "Do you provide support during school holidays?",
+        answer: "Yes. We can offer additional hours, community access and structured activities during school holidays, subject to availability."
+      }
+    ]
+  },
+  {
+    id: "enteral-feeding-peg-pag",
+    title: "Enteral Feeding (PEG/PAG) Support",
+    slug: "enteral-feeding-peg-pag",
+    shortDescription: "Safe, hygienic support with PEG/PAG enteral feeding, tube care and nutrition routines.",
+    longDescription: `We provide trained support for clients requiring enteral feeding through PEG/PAG. Our team follows strict hygiene and infection control procedures, works to your clinical guidelines and liaises with healthcare professionals as needed.`,
+    benefits: [
+      "Trained in PEG/PAG feeding procedures",
+      "Strict infection control and hygiene",
+      "Works to clinical plans and protocols",
+      "Dignified, person-centred support",
+      "Documentation and communication with your care team"
+    ],
+    whatsIncluded: [
+      "Preparation and administration of enteral feeds",
+      "PEG/PAG tube care and site observation",
+      "Monitoring intake and tolerance",
+      "Equipment cleaning and safe handling",
+      "Record-keeping and handover notes"
+    ],
+    sessionDuration: "1–3 hours per visit (as clinically required)",
+    pricingNotes: "Available via NDIS for eligible participants or private arrangements",
+    ndisSupported: true,
+    icon: "ChefHat",
+    relatedServices: ["personal-care", "disability-support", "meal-preparation"],
+    faqs: [
+      {
+        question: "Do you follow a clinical feeding plan?",
+        answer: "Yes. We follow your clinician-approved feeding plan and any specific protocols, and we document sessions for continuity of care."
+      },
+      {
+        question: "Can you coordinate with my dietitian or nurse?",
+        answer: "Absolutely. With your consent we can liaise with your treating professionals to keep care aligned and up to date."
       }
     ]
   }

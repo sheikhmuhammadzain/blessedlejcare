@@ -218,10 +218,10 @@ const Services = () => {
             Every person's care needs are unique. Contact us today for a free consultation to discuss how our services can be tailored to support you or your loved one.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary">
+            <Button asChild size="lg" variant="outline" className="border-white bg-primary text-white hover:bg-white hover:text-primary">
               <Link to="/contact">Schedule Consultation</Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary">
+            <Button asChild size="lg" variant="outline" className="border-white bg-primary text-white hover:bg-white hover:text-primary">
               <Link to="/ndis-intake">NDIS Assessment</Link>
             </Button>
           </div>
