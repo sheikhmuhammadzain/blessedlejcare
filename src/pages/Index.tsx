@@ -96,51 +96,51 @@ const Index = () => {
 
       {/* Services Overview */}
       <section className="care-section">
-        <div className="care-container">
-          <ScrollReveal direction="up" delay={0} duration={800}>
-            <div className="text-center space-y-4 mb-16">
-              <h2 className="care-heading text-center">Our Services</h2>
-              <p className="care-subheading text-center max-w-3xl mx-auto">
-                Comprehensive care services designed to help you maintain independence and quality of life in your own home
-              </p>
+  <div className="care-container">
+    <ScrollReveal direction="up" delay={0} duration={800}>
+      <div className="text-center space-y-4 mb-16">
+        <h2 className="care-heading text-center">Our Services</h2>
+        <p className="care-subheading text-center max-w-3xl mx-auto">
+          Comprehensive care services designed to help you maintain independence and quality of life in your own home
+        </p>
+      </div>
+    </ScrollReveal>
+    
+    <StaggeredReveal
+      className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+      direction="up"
+      staggerDelay={150}
+      duration={800}
+    >
+      {featuredServices.map((service) => (
+        <Card key={service.id} className="care-card hover:shadow-xl group hover:scale-105 care-transition h-full flex flex-col">
+          <CardContent className="p-6 text-center space-y-4 flex flex-col flex-grow">
+            <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto group-hover:bg-primary group-hover:text-primary-foreground care-transition">
+              <Heart className="w-8 h-8" />
             </div>
-          </ScrollReveal>
-          
-          <StaggeredReveal
-            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
-            direction="up"
-            staggerDelay={150}
-            duration={800}
-          >
-            {featuredServices.map((service) => (
-              <Card key={service.id} className="care-card hover:shadow-xl group hover:scale-105 care-transition">
-                <CardContent className="p-6 text-center space-y-4">
-                  <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto group-hover:bg-primary group-hover:text-primary-foreground care-transition">
-                    <Heart className="w-8 h-8" />
-                  </div>
-                  <div className="space-y-2">
-                    <h3 className="text-xl font-semibold text-foreground">{service.title}</h3>
-                    <p className="care-text text-sm">{service.shortDescription}</p>
-                  </div>
-                  <Button asChild variant="ghost" className="group-hover:bg-primary group-hover:text-primary-foreground">
-                    <Link to={`/services/${service.slug}`}>
-                      Learn More <ArrowRight className="ml-2 w-4 h-4" />
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </StaggeredReveal>
-          
-          <ScrollReveal direction="up" delay={600} duration={800}>
-            <div className="text-center mt-12">
-              <Button asChild size="lg" variant="outline" className="care-button-secondary">
-                <Link to="/services">View All Services</Link>
-              </Button>
+            <div className="space-y-2 flex-grow">
+              <h3 className="text-xl font-semibold text-foreground">{service.title}</h3>
+              <p className="care-text text-sm">{service.shortDescription}</p>
             </div>
-          </ScrollReveal>
-        </div>
-      </section>
+            <Button asChild variant="ghost" className="group-hover:bg-primary group-hover:text-primary-foreground mt-auto">
+              <Link to={`/services/${service.slug}`}>
+                Learn More <ArrowRight className="ml-2 w-4 h-4" />
+              </Link>
+            </Button>
+          </CardContent>
+        </Card>
+      ))}
+    </StaggeredReveal>
+    
+    <ScrollReveal direction="up" delay={600} duration={800}>
+      <div className="text-center mt-12">
+        <Button asChild size="lg" variant="outline" className="care-button-secondary">
+          <Link to="/services">View All Services</Link>
+        </Button>
+      </div>
+    </ScrollReveal>
+  </div>
+</section>
 
       {/* Why Choose Us */}
       <section className="care-section bg-secondary/50">
