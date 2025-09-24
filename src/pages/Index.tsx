@@ -5,12 +5,14 @@ import { Card, CardContent } from "@/components/ui/card";
 import heroImage from "@/assets/hero-image.jpg";
 import { services } from "@/data/services";
 import { testimonials } from "@/data/testimonials";
+import { getPreviewImages } from "@/data/galleryAuto";
 import { ScrollReveal, StaggeredReveal } from "@/components/animations/ScrollReveal";
 import { CountUp } from "@/components/animations/ParallaxSection";
 
 const Index = () => {
   const featuredServices = services.slice(0, 4);
   const featuredTestimonials = testimonials.slice(0, 3);
+  const galleryPreview = getPreviewImages(8);
 
   return (
     <>
@@ -227,6 +229,48 @@ const Index = () => {
               </div>
             </ScrollReveal>
           </div>
+        </div>
+      </section>
+
+      {/* Gallery Preview */}
+      <section className="care-section">
+        <div className="care-container">
+          <ScrollReveal direction="up" delay={0} duration={800}>
+            <div className="text-center space-y-4 mb-10">
+              <h2 className="care-heading">In Pictures</h2>
+              <p className="care-subheading max-w-3xl mx-auto">
+                A glimpse of our compassionate care in action.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <StaggeredReveal
+            className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4"
+            direction="up"
+            staggerDelay={120}
+            duration={700}
+          >
+            {galleryPreview.map((img, idx) => (
+              <div key={idx} className="group overflow-hidden rounded-xl bg-muted/40 border border-border">
+                <div className="aspect-square overflow-hidden">
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    loading="lazy"
+                    className="h-full w-full object-cover group-hover:scale-105 care-transition"
+                  />
+                </div>
+              </div>
+            ))}
+          </StaggeredReveal>
+
+          <ScrollReveal direction="up" delay={400} duration={700}>
+            <div className="text-center mt-8">
+              <Button asChild size="lg" variant="outline" className="care-button-secondary">
+                <Link to="/gallery">View Full Gallery</Link>
+              </Button>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 

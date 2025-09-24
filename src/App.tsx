@@ -20,6 +20,7 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import Accessibility from "./pages/Accessibility";
 import NotFound from "./pages/NotFound";
+import Gallery from "./pages/Gallery";
 
 const queryClient = new QueryClient();
 
@@ -43,6 +44,7 @@ const App = () => (
             <Route path="/legal/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/legal/terms" element={<Terms />} />
             <Route path="/resources" element={<Resources />} />
+            <Route path="/gallery" element={<Gallery />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/accessibility" element={<Accessibility />} />
