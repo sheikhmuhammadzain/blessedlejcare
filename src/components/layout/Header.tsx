@@ -20,13 +20,13 @@ const Header = () => {
   return (
     <header className="bg-white shadow-sm border-b border-border sticky top-0 z-50">
       <div className="care-container">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+        <div className="flex items-center justify-between h-20 lg:h-24">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3">
-            <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
-              <img src="/logo.jpg" alt="Logo" />
+          <Link to="/" className="flex items-center space-x-4">
+            <div className="w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20  rounded-lg flex items-center justify-center">
+              <img src="/logo1.png" alt="Logo" className="w-full h-full object-contain" />
             </div>
-            <div className="text-xl lg:text-2xl font-bold text-primary">
+            <div className="text-2xl lg:text-4xl font-bold text-primary leading-none">
               Blessed LEJ Care
             </div>
           </Link>
