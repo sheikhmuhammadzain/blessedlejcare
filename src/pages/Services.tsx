@@ -46,10 +46,10 @@ const Services = () => {
               We work with both self-managed and plan-managed NDIS participants to deliver support services that align with your NDIS goals and plans
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary">
+              <Button asChild size="lg" variant="outline" className="bg-primary border-white text-white hover:bg-white hover:text-primary">
                 <Link to="/ndis-intake">NDIS Assessment Form</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary">
+              <Button asChild size="lg" variant="outline" className="bg-primary border-white text-white hover:bg-white hover:text-primary">
                 <Link to="/contact">Discuss Your Plan</Link>
               </Button>
             </div>

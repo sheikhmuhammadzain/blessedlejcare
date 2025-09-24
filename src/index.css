@@ -12,7 +12,7 @@
     --card-foreground: 0 0% 0%;
     --popover: 0 0% 98.8235%;
     --popover-foreground: 0 0% 0%;
-    --primary: 225.1034 66.2100% 42.9412%;
+    --primary: 216, 50%, 32%;
     --primary-foreground: 0 0% 100%;
     --secondary: 214.2857 24.1379% 94.3137%;
     --secondary-foreground: 0 0% 3.1373%;
@@ -187,5 +187,71 @@
   
   .care-button-secondary {
     @apply bg-secondary hover:opacity-90 text-secondary-foreground font-semibold px-8 py-4 rounded-xl care-transition border border-border;
+  }
+}
+
+@layer utilities {
+  /* Smooth scrolling for the entire page */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Enhanced scroll animations */
+  .scroll-smooth {
+    scroll-behavior: smooth;
+  }
+
+  /* Performance optimizations for animations */
+  .will-change-transform {
+    will-change: transform;
+  }
+
+  .will-change-opacity {
+    will-change: opacity;
+  }
+
+  .will-change-auto {
+    will-change: auto;
+  }
+
+  /* Accessibility: Respect user's motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Enhanced hover effects for interactive elements */
+  .hover-lift {
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+  }
+
+  /* Stagger animation delays */
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+  .stagger-5 { animation-delay: 0.5s; }
+
+  /* Custom easing curves for professional animations */
+  .ease-out-quart {
+    transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .ease-out-expo {
+    transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+  .ease-out-back {
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
 }

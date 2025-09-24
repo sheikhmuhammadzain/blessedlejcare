@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
+import { ScrollOptimizer } from "@/components/animations/ScrollOptimizer";
 
 interface LayoutProps {
   children: ReactNode;
@@ -8,13 +9,15 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <div className="min-h-screen flex flex-col w-full">
-      <Header />
-      <main className="flex-1">
-        {children}
-      </main>
-      <Footer />
-    </div>
+    <ScrollOptimizer>
+      <div className="min-h-screen flex flex-col w-full">
+        <Header />
+        <main className="flex-1">
+          {children}
+        </main>
+        <Footer />
+      </div>
+    </ScrollOptimizer>
   );
 };
 
