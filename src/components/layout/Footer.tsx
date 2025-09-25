@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Heart, Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -8,11 +8,11 @@ const Footer = () => {
         <div className="py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-primary-foreground rounded-lg flex items-center justify-center">
-                <Heart className="w-5 h-5 text-primary" />
+            <div className="flex items-center space-x-4">
+              <div className="w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-lg flex bg-white items-center justify-center">
+                <img src="/logo1.png" alt="Logo" className="w-full h-full object-contain" />
               </div>
-              <div className="text-xl font-bold">Blessed LEJ Care</div>
+              <div className="text-2xl lg:text-4xl font-bold">Blessed LEJ Care</div>
             </div>
             <p className="text-primary-foreground/80 leading-relaxed">
               Compassionate aged care and disability support services in Brighton Le Sands and surrounding areas.
