@@ -56,22 +56,20 @@ const Header = () => {
               className="flex items-center space-x-2 text-primary hover:text-primary/80 care-transition"
             >
               <Phone className="w-4 h-4" />
-              <span className="font-semibold">0414 326 448</span>
+              <span className="font-semibold whitespace-nowrap">0414 326 448</span>
             </a>
             <Button asChild className="care-button-primary hover:bg-primary/80 hover:text-primary">
               <Link to="/contact">Get Support</Link>
             </Button>
-            {/* Desktop language selector */}
-            <div className="ml-2 hidden lg:flex items-center rounded-md border border-border px-2 py-1 bg-white">
-              <span className="text-xs text-foreground mr-2">Translate:</span>
-              <div className="min-w-[160px]">
-                <GoogleTranslate
-                  includedLanguages="pt,es"
-                  pageLanguage="en"
-                  label=""
-                  containerId="google_translate_header_desktop"
-                />
-              </div>
+            {/* Desktop language selector (compact) */}
+            <div className="ml-2 hidden lg:flex items-center min-w-0">
+              <GoogleTranslate
+                includedLanguages="pt,es"
+                pageLanguage="en"
+                label=""
+                containerId="google_translate_header_desktop"
+                variant="compact"
+              />
             </div>
           </div>
 
@@ -110,12 +108,13 @@ const Header = () => {
               {/* Mobile language selector */}
               <div className="pt-4 border-t border-border space-y-2">
                 <div className="text-sm font-medium text-foreground">Language</div>
-                <div className="rounded-md border border-border px-2 py-1 bg-white">
+                <div className="rounded-md border border-border px-2 py-1 bg-white min-w-0">
                   <GoogleTranslate
                     includedLanguages="pt,es"
                     pageLanguage="en"
                     label=""
                     containerId="google_translate_header_mobile"
+                    variant="compact"
                   />
                 </div>
               </div>

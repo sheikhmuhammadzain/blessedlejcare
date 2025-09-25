@@ -5,6 +5,8 @@ interface GoogleTranslateProps {
   pageLanguage?: string; // default source language (e.g., "en")
   containerId?: string; // DOM id for the translate element
   label?: string;
+  variant?: "default" | "compact"; // compact for header
+  className?: string; // extra classes on wrapper
 }
 
 declare global {
@@ -19,6 +21,8 @@ export default function GoogleTranslate({
   pageLanguage = "en",
   containerId = "google_translate_element",
   label = "Translate",
+  variant = "default",
+  className = "",
 }: GoogleTranslateProps) {
   useEffect(() => {
     function initTranslate() {
@@ -36,8 +40,6 @@ export default function GoogleTranslate({
             pageLanguage,
             includedLanguages,
             autoDisplay: false,
-            layout:
-              window.google.translate.TranslateElement.InlineLayout.SIMPLE,
           },
           containerId
         );
@@ -67,12 +69,18 @@ export default function GoogleTranslate({
     // No cleanup of the script to avoid re-downloading across route changes
   }, [includedLanguages, pageLanguage, containerId]);
 
+  const isCompact = variant === "compact";
+  const wrapperClass = isCompact
+    ? "inline-flex items-center gap-2 py-0 "
+    : "inline-flex items-center gap-3 py-2 ";
+  const innerClass = isCompact ? "min-w-[140px] h-8 flex items-center" : "min-w-[180px]";
+
   return (
-    <div className="w-full flex items-center gap-3 py-2" aria-label="Language selector">
+    <div className={`${wrapperClass}${className}`} aria-label="Language selector">
       {label ? (
         <span className="text-sm text-slate-600 select-none">{label}:</span>
       ) : null}
-      <div id={containerId} className="min-w-[180px]" />
+      <div id={containerId} className={innerClass} />
     </div>
   );
 }
