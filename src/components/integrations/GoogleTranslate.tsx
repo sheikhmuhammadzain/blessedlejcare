@@ -7,6 +7,7 @@ interface GoogleTranslateProps {
   label?: string;
   variant?: "default" | "compact"; // compact for header
   className?: string; // extra classes on wrapper
+  activeWhenMediaQuery?: string; // only activate when media query matches
 }
 
 declare global {
@@ -23,31 +24,41 @@ export default function GoogleTranslate({
   label = "Translate",
   variant = "default",
   className = "",
+  activeWhenMediaQuery,
 }: GoogleTranslateProps) {
   useEffect(() => {
-    function initTranslate() {
+    function ensureWidgetAt(targetId: string) {
+      const container = document.getElementById(targetId);
+      if (!container) return;
+
+      // If a widget already exists anywhere, move it here
+      const existing = document.querySelector<HTMLDivElement>(".goog-te-gadget");
+      if (existing) {
+        container.innerHTML = "";
+        container.appendChild(existing);
+        return;
+      }
+
+      // Else, create a new one
       if (
         window.google &&
         window.google.translate &&
         window.google.translate.TranslateElement
       ) {
-        // Avoid duplicate initialization by clearing the container
-        const container = document.getElementById(containerId);
-        if (container) container.innerHTML = "";
-
+        container.innerHTML = "";
         new window.google.translate.TranslateElement(
           {
             pageLanguage,
             includedLanguages,
             autoDisplay: false,
           },
-          containerId
+          targetId
         );
       }
     }
 
     // Expose init function for Google script callback
-    window.googleTranslateElementInit = initTranslate;
+    window.googleTranslateElementInit = () => ensureWidgetAt(containerId);
 
     // Add script only once
     const existingScript = document.getElementById(
@@ -63,11 +74,31 @@ export default function GoogleTranslate({
       document.body.appendChild(script);
     } else {
       // If script already present, try initializing immediately
-      initTranslate();
+      ensureWidgetAt(containerId);
+    }
+
+    // If activation is gated by a media query, move the widget when it matches
+    let mql: MediaQueryList | null = null;
+    function handleMediaChange() {
+      if (!activeWhenMediaQuery) return;
+      if (mql && mql.matches) {
+        ensureWidgetAt(containerId);
+      }
+    }
+    if (activeWhenMediaQuery && typeof window !== "undefined" && "matchMedia" in window) {
+      mql = window.matchMedia(activeWhenMediaQuery);
+      // If it matches now, ensure placement
+      if (mql.matches) ensureWidgetAt(containerId);
+      mql.addEventListener?.("change", handleMediaChange);
     }
 
     // No cleanup of the script to avoid re-downloading across route changes
-  }, [includedLanguages, pageLanguage, containerId]);
+    return () => {
+      if (mql) {
+        mql.removeEventListener?.("change", handleMediaChange);
+      }
+    };
+  }, [includedLanguages, pageLanguage, containerId, activeWhenMediaQuery]);
 
   const isCompact = variant === "compact";
   const wrapperClass = isCompact
