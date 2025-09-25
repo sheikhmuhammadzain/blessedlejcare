@@ -69,6 +69,7 @@ const Header = () => {
                 label=""
                 containerId="google_translate_header_desktop"
                 variant="compact"
+                activeWhenMediaQuery="(min-width: 1024px)"
               />
             </div>
           </div>
@@ -108,15 +109,14 @@ const Header = () => {
               {/* Mobile language selector */}
               <div className="pt-4 border-t border-border space-y-2">
                 <div className="text-sm font-medium text-foreground">Language</div>
-                <div className="rounded-md border border-border px-2 py-1 bg-white min-w-0">
-                  <GoogleTranslate
-                    includedLanguages="pt,es"
-                    pageLanguage="en"
-                    label=""
-                    containerId="google_translate_header_mobile"
-                    variant="compact"
-                  />
-                </div>
+                <GoogleTranslate
+                  includedLanguages="pt,es"
+                  pageLanguage="en"
+                  label=""
+                  containerId="google_translate_header_mobile"
+                  variant="compact"
+                  activeWhenMediaQuery="(max-width: 1023px)"
+                />
               </div>
               <div className="pt-4 border-t border-border space-y-3">
                 <a
