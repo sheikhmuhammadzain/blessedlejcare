@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Heart, Phone, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/logo.png";
+import GoogleTranslate from "@/components/integrations/GoogleTranslate";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -61,6 +61,18 @@ const Header = () => {
             <Button asChild className="care-button-primary hover:bg-primary/80 hover:text-primary">
               <Link to="/contact">Get Support</Link>
             </Button>
+            {/* Desktop language selector */}
+            <div className="ml-2 hidden lg:flex items-center rounded-md border border-border px-2 py-1 bg-white">
+              <span className="text-xs text-foreground mr-2">Translate:</span>
+              <div className="min-w-[160px]">
+                <GoogleTranslate
+                  includedLanguages="pt,es"
+                  pageLanguage="en"
+                  label=""
+                  containerId="google_translate_header_desktop"
+                />
+              </div>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -95,6 +107,18 @@ const Header = () => {
                   {item.name}
                 </Link>
               ))}
+              {/* Mobile language selector */}
+              <div className="pt-4 border-t border-border space-y-2">
+                <div className="text-sm font-medium text-foreground">Language</div>
+                <div className="rounded-md border border-border px-2 py-1 bg-white">
+                  <GoogleTranslate
+                    includedLanguages="pt,es"
+                    pageLanguage="en"
+                    label=""
+                    containerId="google_translate_header_mobile"
+                  />
+                </div>
+              </div>
               <div className="pt-4 border-t border-border space-y-3">
                 <a
                   href="tel:+61414326448"
